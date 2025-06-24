@@ -2,11 +2,10 @@
 session_start();
 
 // Database credentials
-$host = 'localhost';
-$dbname = 'travelnow';
-$username = 'root';
-$password = '';
-
+$host = 'sql12.freesqldatabase.com';
+$dbname = 'sql12786577';
+$username = 'sql12786577';
+$password = 'L4hlZ3zHSD';
 // Create DB connection
 $conn = new mysqli($host, $username, $password, $dbname);
 
