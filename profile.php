@@ -8,10 +8,10 @@ if (!isset($_SESSION['userid'])) {
 }
 
 // ✅ Database connection
-$host = 'localhost';
-$dbname = 'travelnow';
-$username = 'root';
-$password = '';
+$host = 'sql12.freesqldatabase.com';
+$dbname = 'sql12786577';
+$username = 'sql12786577';
+$password = 'L4hlZ3zHSD';
 
 $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
