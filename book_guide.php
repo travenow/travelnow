@@ -7,7 +7,7 @@ if (!isset($_SESSION['userid'])) {
 }
 
 // DB connection
-$conn = new mysqli("localhost", "root", "", "travelnow");
+$conn = new mysqli("sql12.freesqldatabase.com", "sql12786577", "L4hlZ3zHSD", "sql12786577");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
