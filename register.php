@@ -1,8 +1,7 @@
 <?php
 session_start(); // Start session to auto-login after registration
-
 // Create a database connection
-$conn = new mysqli("localhost", "root", "", "travelnow");
+$conn = new mysqli("sql12.freesqldatabase.com", "sql12786577", "L4hlZ3zHSD", "sql12786577");
 
 // Check the connection
 if ($conn->connect_error) {
