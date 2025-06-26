@@ -184,3 +184,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('[data-tab="leaderboard"]')?.addEventListener('click', loadLeaderboard);
 });
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.btn-cancel').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const bookingId = this.dataset.id;
+            const type = this.dataset.type;
+
+            if (confirm('Are you sure you want to cancel this booking?')) {
+                fetch('cancel_booking.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: bookingId, type: type })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        this.closest('tr').remove(); // remove row from table
+                    } else {
+                        alert('Failed to cancel booking.');
+                    }
+                })
+                .catch(err => {
+                    console.error('Cancel error:', err);
+                    alert('Error occurred while cancelling.');
+                });
+            }
+        });
+    });
+});
