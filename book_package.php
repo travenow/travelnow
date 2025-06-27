@@ -29,7 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bind_param("isssis", $user_id, $name, $email, $start_date, $people, $package);
 
         if ($stmt->execute()) {
-            echo '<div class="alert success">✅ Package booked successfully!</div>';
+            // ✅ Redirect to home page after booking
+            header("Location: index.php?booked=success");
+            exit();
         } else {
             echo "❌ Booking failed: " . $stmt->error;
         }
