@@ -92,12 +92,12 @@
   <h2 class="section-title">Our Services</h2>
   <p class="section-subtitle">Discover a range of travel services tailored to make your journey unforgettable.</p>
   <div class="services-container">
-    <div class="service-card" onclick="location.href='guidebooking.html';">
+    <div class="service-card" onclick="location.href='guidebooking.php';">
       <img src="img/TG.jpeg" alt="Tourist Guide Booking">
       <h3>Tourist Guide Booking</h3>
       <p>Connect with expert local guides to explore hidden gems and popular landmarks effortlessly.</p>
     </div>
-    <div class="service-card" onclick="location.href='book_package.html';">
+    <div class="service-card" onclick="location.href='bookpackage.php';">
       <img src="img/CTP.jpeg" alt="Custom Tour Packages">
       <h3>Custom Tour Packages</h3>
       <p>Create personalized travel itineraries tailored to your interests and schedule.</p>
