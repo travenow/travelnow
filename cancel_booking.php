@@ -56,7 +56,7 @@ $success = $stmt->affected_rows > 0;
 
 // ✅ Step 3: Send cancellation email
 if ($success) {
-    $subject = "❌ $label Booking Cancelled";
+    $subject = "$label Booking Cancelled";
     $body = "
         <h3>Hello $name,</h3>
         <p>Your <strong>$label</strong> booking has been successfully cancelled.</p>
