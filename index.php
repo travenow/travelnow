@@ -177,8 +177,8 @@
     <div id="registerForm" class="form-container">
       <h2>Register</h2>
       <form action="register.php" method="POST">
-        <input type="text" name="name" placeholder="Full Name" value="<?php echo $_SESSION['name']; ?>" required>
-        <input type="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>" required>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="phoneNo" placeholder="Phone No" required pattern="[0-9]{10}">
         <input type="text" name="location" placeholder="Location (optional)">
         <textarea name="bio" placeholder="Tell us about yourself (optional)"></textarea>
