@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($stmt->execute()) {
             // ✅ Send email BEFORE redirect
-            $subject = "🎉 Package Booking Confirmed!";
+            $subject = "Package Booking Confirmed!";
             $body = "
                 <h3>Dear $name,</h3>
                 <p>Your tour package <strong>$package</strong> starting on <strong>$start_date</strong> for <strong>$people</strong> people has been successfully booked.</p>
