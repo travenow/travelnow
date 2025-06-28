@@ -1,11 +1,19 @@
 # Use official PHP image with Apache
 FROM php:8.2-apache
 
-# Install mysqli and other common PHP extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Install dependencies and PHP extensions
+RUN apt-get update && apt-get install -y \
+    unzip \
+    zip \
+    libzip-dev \
+    libpng-dev \
+    && docker-php-ext-install mysqli pdo pdo_mysql
 
-# Enable Apache mod_rewrite (if you use pretty URLs)
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
+
+# Install Composer globally
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Set working directory
 WORKDIR /var/www/html
@@ -13,10 +21,13 @@ WORKDIR /var/www/html
 # Copy website files into container
 COPY . /var/www/html/
 
-# Set permissions for upload folder
-RUN mkdir -p /var/www/html/uploads \
+# Set correct permissions for upload folders
+RUN mkdir -p /var/www/html/uploads /var/www/html/uploads/gallery \
     && chown -R www-data:www-data /var/www/html/uploads \
     && chmod -R 755 /var/www/html/uploads
 
-# Expose port 80 (default for Apache)
+# Install PHP dependencies via Composer
+RUN composer install --no-dev --optimize-autoloader
+
+# Expose Apache HTTP port
 EXPOSE 80
