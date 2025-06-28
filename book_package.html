@@ -9,8 +9,8 @@
   <div class="booking-container">
     <h2>Book a Tour Package</h2>
     <form action="book_package.php" method="POST">
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="name" placeholder="Your Full Name" value="<?php echo $_SESSION['name']; ?>" required>
+      <input type="email" name="email" placeholder="Your Email" value="<?php echo $_SESSION['email']; ?>" required>
       <input type="date" name="start_date" required>
       <input type="number" name="people" min="1" placeholder="No. of People" required>
 
