@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['bio']      = $bio;
 
         // Redirect to profile page
-        header("Location: login.php");
+        header("Location: index.php");
         exit();
     } else {
         // Handle duplicate email/phone
