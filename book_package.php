@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+require 'send_mail.php';
+
+
 // ✅ Ensure user is logged in
 if (!isset($_SESSION['userid'])) {
     die("You must be logged in to book a package.");
@@ -41,6 +44,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "⚠️ Please fill in all fields correctly.";
     }
 }
+
+
+$subject = "🎉 Package Booking Confirmed!";
+$body = "
+    <h3>Dear $name,</h3>
+    <p>Your tour package <strong>$package</strong> starting on <strong>$start_date</strong> for <strong>$people</strong> people has been successfully booked.</p>
+    <p>Thank you for choosing <strong>TravelNow</strong>!</p>
+";
+
+sendBookingEmail($email, $subject, $body);
 
 $conn->close();
 ?>
