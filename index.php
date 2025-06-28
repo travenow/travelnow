@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if (!isset($_SESSION['userid'])) {
+    header("Location: index.php"); // or show login popup
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,7 +131,7 @@
               <img src='img/{$p['img']}' alt='{$p['name']}'>
               <h3>{$p['name']}</h3>
               <p>{$p['days']} | Starting at {$p['price']}</p>
-              <button class='btn' onclick=\"location.href='book_package.html';\">Book Now</button>
+              <button class='btn' onclick=\"location.href='bookpackage.php';\">Book Now</button>
             </div>";
     }
     ?>
