@@ -194,10 +194,10 @@
         <h2>Book a Guide</h2>
 
         <label for="name">Full Name:</label>
-    <input type="text" name="name" id="name" value="<?php echo $_SESSION['name']; ?>" required>
+    <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION['name']); ?>" required>
 
     <label for="email">Email Address:</label>
-    <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" required>
+    <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" required>
 
     <label for="booking_date">Booking Date:</label>
     <input type="date" name="booking_date" id="booking_date" required>
