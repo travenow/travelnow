@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['userid'])) {
-    header("Location: index.php"); // or show login popup
-    exit();
-}
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
