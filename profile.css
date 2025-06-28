@@ -22,6 +22,7 @@ body {
     padding: 30px;
 }
 
+/* Headings */
 h1, h2 {
     color: #2c3e50;
     margin-bottom: 20px;
@@ -31,37 +32,7 @@ h1 {
     text-align: center;
 }
 
-.profile-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-label {
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-input, textarea, select {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-input:focus, textarea:focus, select:focus {
-    outline: none;
-    border-color: #3498db;
-}
-
-/* Profile section styles */
+/* Profile section */
 .profile-section {
     display: flex;
     flex-direction: column;
@@ -138,7 +109,7 @@ input:focus, textarea:focus, select:focus {
     gap: 5px;
 }
 
-/* Gallery section styles */
+/* Gallery section */
 .profile-gallery {
     padding-top: 20px;
 }
@@ -214,7 +185,73 @@ input:focus, textarea:focus, select:focus {
     color: #64748b;
 }
 
-/* Button styles */
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    font-size: 16px;
+    min-width: 100px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.tab.active {
+    border-bottom-color: #3498db;
+    color: #3498db;
+    font-weight: 600;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Forms */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Buttons */
 .btn {
     background-color: #3498db;
     color: white;
@@ -239,7 +276,7 @@ input:focus, textarea:focus, select:focus {
     background-color: #1e2a37;
 }
 
-/* Error and info messages */
+/* Alerts */
 .message {
     padding: 10px;
     border-radius: 5px;
@@ -256,97 +293,20 @@ input:focus, textarea:focus, select:focus {
     color: #0369a1;
 }
 
-/* Tabbed navigation */
-.tabs {
-    display: flex;
-    border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-bottom: 3px solid transparent;
-}
-
-.tab.active {
-    border-bottom-color: #3498db;
-    color: #3498db;
-    font-weight: 600;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-/* File inputs */
-input[type="file"] {
-    display: none;
-}
-
-/* Booking History Styles */
-.history-section {
-    padding: 10px 0;
-}
-
-.history-section h3 {
-    font-size: 20px;
-    color: #2c3e50;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
+/* Table styles */
+.leaderboard-table,
 .history-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.05);
-    font-size: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.history-table th,
-.history-table td {
-    border: 1px solid #e2e8f0;
-    padding: 12px;
-    text-align: center;
-}
-
-.history-table th {
-    background-color: #3498db;
-    color: black;
-    font-weight: 600;
-}
-
-.history-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.history-table tr:hover {
-    background-color: #f1f9ff;
-}
-
-/* Leaderboard styles */
-.leaderboard-table {
-    width: 90%;
-    margin: 30px auto;
-    border-collapse: collapse;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.leaderboard-table th, .leaderboard-table td {
+.leaderboard-table th, .leaderboard-table td,
+.history-table th, .history-table td {
     padding: 12px 20px;
     text-align: center;
+    border: 1px solid #e2e8f0;
 }
 
 .leaderboard-table th {
@@ -354,18 +314,45 @@ input[type="file"] {
     color: white;
 }
 
-.leaderboard-table tr:nth-child(even) {
-    background-color: #ecf0f1;
+.leaderboard-table tr:nth-child(even),
+.history-table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.leaderboard-table tr:hover {
-    background-color: #d0f0c0;
+.leaderboard-table tr:hover,
+.history-table tr:hover {
+    background-color: #e0f7fa;
 }
 
-/* Responsive adjustments */
+/* File input hidden */
+input[type="file"] {
+    display: none;
+}
+
+/* 📱 Responsive mobile adjustments */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
     .container {
         padding: 20px;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .tab {
+        padding: 8px 12px;
+        font-size: 14px;
+        flex: 1 1 auto;
+        min-width: 80px;
     }
 
     .profile-header {
@@ -378,5 +365,13 @@ input[type="file"] {
 
     .gallery-item {
         height: 120px;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td,
+    .history-table th,
+    .history-table td {
+        font-size: 13px;
+        padding: 8px;
     }
 }
