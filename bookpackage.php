@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if (!isset($_SESSION['userid'])) {
+    header("Location: index.php"); // redirect to login if not logged in
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
