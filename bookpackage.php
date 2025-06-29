@@ -89,7 +89,7 @@ if (!isset($_SESSION['userid'])) {
       <input type="email" name="email" placeholder="Your Email"
              value="<?php echo isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : ''; ?>" required>
 
-      <input type="date" name="start_date" required>
+      <input type="date" name="start_date" min="<?php echo date('Y-m-d'); ?>" required>        
       <input type="number" name="people" min="1" placeholder="No. of People" required>
 
       <select name="package" required>
