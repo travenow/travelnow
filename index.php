@@ -164,7 +164,7 @@
                 <strong>Famous Places:</strong>
                 {$p['famous']}
               </div>
-              <button class='btn' onclick=\"location.href='book_package.html';\">Book Now</button>
+              <button class='btn' onclick=\"location.href='bookpackage.php';\">Book Now</button>
             </div>";
     }
     ?>
