@@ -80,7 +80,6 @@
         ✓ Affordable Travel Packages<br>
         ✓ 24/7 Support & Assistance
       </p>
-      <button class="btn about-btn">Learn More</button>
     </div>
     <div class="about-image">
       <img src="img/ABOUT.jpeg" alt="About Us - TravelNow">
@@ -112,14 +111,51 @@
   <p class="section-subtitle">Explore the beauty and diversity of India with our exclusive tour packages.</p>
   <div class="packages-container">
     <?php
-    $packages = [
-      ["img" => "GOA.jpeg", "name" => "Goa Beaches", "price" => "₹15,000", "days" => "3 Days, 2 Nights"],
-      ["img" => "KERALA.jpeg", "name" => "Kerala Backwaters", "price" => "₹18,000", "days" => "4 Days, 3 Nights"],
-      ["img" => "GOLDEN.jpeg", "name" => "Golden Triangle", "price" => "₹25,000", "days" => "5 Days, 4 Nights"],
-      ["img" => "LADAK.jpeg", "name" => "Leh Ladakh", "price" => "₹35,000", "days" => "7 Days, 6 Nights"],
-      ["img" => "ISLAND.jpeg", "name" => "Andaman Islands", "price" => "₹28,000", "days" => "5 Days, 4 Nights"],
-      ["img" => "ROYAL.jpeg", "name" => "Rajasthan Royal Tour", "price" => "₹30,000", "days" => "6 Days, 5 Nights"],
-    ];
+$packages = [
+  [
+    "img" => "GOA.jpeg",
+    "name" => "Goa Beaches",
+    "price" => "₹15,000",
+    "days" => "3 Days, 2 Nights",
+    "famous" => "Baga Beach, Calangute Beach, Fort Aguada, Basilica of Bom Jesus, Anjuna Market, Dudhsagar Falls"
+  ],
+  [
+    "img" => "KERALA.jpeg",
+    "name" => "Kerala Backwaters",
+    "price" => "₹18,000",
+    "days" => "4 Days, 3 Nights",
+    "famous" => "Alleppey Houseboat, Kumarakom, Munnar Tea Gardens, Thekkady, Varkala Beach, Athirapally Falls"
+  ],
+  [
+    "img" => "GOLDEN.jpeg",
+    "name" => "Golden Triangle",
+    "price" => "₹25,000",
+    "days" => "5 Days, 4 Nights",
+    "famous" => "Taj Mahal, India Gate, Hawa Mahal, Qutub Minar, Red Fort, Amber Fort"
+  ],
+  [
+    "img" => "LADAK.jpeg",
+    "name" => "Leh Ladakh",
+    "price" => "₹35,000",
+    "days" => "7 Days, 6 Nights",
+    "famous" => "Pangong Lake, Nubra Valley, Magnetic Hill, Shanti Stupa, Khardung La Pass, Leh Palace"
+  ],
+  [
+    "img" => "ISLAND.jpeg",
+    "name" => "Andaman Islands",
+    "price" => "₹28,000",
+    "days" => "5 Days, 4 Nights",
+    "famous" => "Radhanagar Beach, Cellular Jail, Ross Island, Neil Island, North Bay Island, Chidiya Tapu"
+  ],
+  [
+    "img" => "ROYAL.jpeg",
+    "name" => "Rajasthan Royal Tour",
+    "price" => "₹30,000",
+    "days" => "6 Days, 5 Nights",
+    "famous" => "City Palace Jaipur, Hawa Mahal, Udaipur Lake Palace, Jaisalmer Fort, Mehrangarh Fort, Pushkar Lake"
+  ],
+];
+
     foreach ($packages as $p) {
       echo "<div class='package-card'>
               <img src='img/{$p['img']}' alt='{$p['name']}'>
@@ -149,7 +185,7 @@
     <div class="contact-info">
       <h3>Contact Information</h3>
       <p><strong>Phone:</strong> +91 98765 43210</p>
-      <p><strong>Email:</strong> support@travelnow.com</p>
+      <p><strong>Gmail:</strong>travelnowbyteamx@gmail.com</p>
       <p><strong>Address:</strong> 123, Wanderlust Street, Delhi, India</p>
       <div class="map-placeholder">
         <iframe src="https://www.google.com/maps/embed?...your-map-here..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
